@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8d2d16">
+  <meta name="description" content="SPV Curries & Meals — homestyle curries and freshly prepared meals.">
+  <title>SPV Curries & Meals | Home Taste in Every Bite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Righteous&display=swap" rel="stylesheet">
+  <style>
+    :root{--red:#8d2d16;--deep:#511b0e;--orange:#e94d25;--yellow:#ffd34e;--green:#217447;--cream:#fff4df}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:#572719;font-family:'Baloo 2',sans-serif}
+    a{text-decoration:none;color:inherit}.top-stripe{height:7px;background:linear-gradient(90deg,#16834b 0 29%,#ffd34e 29% 59%,#e94d25 59%)}
+    header{position:absolute;z-index:20;top:7px;left:0;width:100%;padding:20px 7%;display:flex;align-items:center;justify-content:space-between;color:#fff;background:linear-gradient(#4b160bcc,transparent)}
+    .brand{display:flex;align-items:center;gap:12px}.brand-mark{width:52px;height:52px;border-radius:16px 16px 16px 5px;background:var(--yellow);color:#742714;display:grid;place-items:center;font:22px Righteous;transform:rotate(-6deg);box-shadow:0 7px 22px #230a0870}
+    .brand-name{font:25px/1 Righteous;color:#fff5dc}.brand-name small{display:block;margin-top:5px;font:800 12px 'Baloo 2';letter-spacing:2.5px;color:var(--yellow)}
+    nav{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:800}nav a:not(.call):hover{color:var(--yellow)}
+    .call{background:var(--yellow);color:#6e2917;border-radius:30px;padding:13px 22px;box-shadow:0 6px 20px #260c0838}
+    .hero{height:min(850px,100svh);min-height:690px;position:relative;overflow:hidden;background:#64200f;color:#fff}
+    .slides,.slide{position:absolute;inset:0}.slides{overflow:hidden}
+    .slide{opacity:0;visibility:hidden;animation:showSlide 28s infinite}
+    .slide:nth-child(1){animation-delay:0s}.slide:nth-child(2){animation-delay:7s}.slide:nth-child(3){animation-delay:14s}.slide:nth-child(4){animation-delay:21s}
+    .slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.08);animation:slowZoom 7s ease-in-out infinite alternate}
+    .slide:nth-child(2) img{animation-delay:1s}.slide:nth-child(3) img{animation-delay:2s}.slide:nth-child(4) img{animation-delay:3s}
+    .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(48,12,5,.86) 0%,rgba(65,19,7,.62) 48%,rgba(40,12,5,.12) 100%),linear-gradient(0deg,rgba(36,10,4,.38),transparent 55%)}
+    .slide-caption{position:absolute;right:7%;bottom:45px;border:1px solid #fff8;border-radius:30px;padding:10px 17px;background:#39140865;backdrop-filter:blur(8px);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:800}
+    @keyframes showSlide{0%{opacity:0;visibility:hidden}3%{opacity:1;visibility:visible}22%{opacity:1;visibility:visible}25%{opacity:0;visibility:hidden}100%{opacity:0;visibility:hidden}}
+    @keyframes slowZoom{from{transform:scale(1.06)}to{transform:scale(1.19)}}
+    .hero-inner{position:relative;z-index:3;padding:220px 7% 100px;max-width:900px;animation:enter .9s ease both}
+    @keyframes enter{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    .eyebrow{display:inline-block;border:1px solid #ffd34e99;background:#61210e88;color:var(--yellow);border-radius:30px;padding:9px 17px;font-size:13px;letter-spacing:1.5px;font-weight:800;text-transform:uppercase}
+    h1{font:clamp(55px,8vw,100px)/.98 Righteous,sans-serif;letter-spacing:-1px;margin:27px 0 20px;text-shadow:0 5px 25px #210a0870}
+    h1 em{font-style:normal;color:var(--yellow)}.hero-inner p{font-size:18px;line-height:1.6;max-width:550px;color:#fff2df;font-weight:600}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:30px;font-weight:800;transition:.25s}
+    .btn-main{background:var(--yellow);color:#6b2615}.btn-light{border:1.5px solid #fff;color:white;background:#ffffff15}.btn:hover{transform:translateY(-4px);filter:brightness(1.06)}
+    .fresh-tag{position:absolute;z-index:4;right:7%;top:53%;padding:13px 19px;border-radius:40px;background:#fff4df;color:#6b2816;font-weight:800;box-shadow:0 12px 35px #270c0844;animation:bob 4s ease-in-out infinite}
+    .fresh-tag i{display:inline-block;width:9px;height:9px;background:#25834d;border-radius:50%;margin-right:9px;box-shadow:0 0 0 6px #25834d22}
+    @keyframes bob{50%{transform:translateY(-13px)}}
+    .slide-dots{position:absolute;z-index:5;left:7%;bottom:39px;display:flex;gap:8px}.slide-dots span{width:26px;height:4px;background:#fff8;border-radius:5px;animation:dot 28s infinite}.slide-dots span:nth-child(2){animation-delay:7s}.slide-dots span:nth-child(3){animation-delay:14s}.slide-dots span:nth-child(4){animation-delay:21s}
+    @keyframes dot{0%,25%{background:var(--yellow)}26%,100%{background:#fff7}}
+    .ticker{overflow:hidden;background:var(--green);color:#fff4df;padding:14px 0;border-block:4px solid var(--yellow);white-space:nowrap}
+    .ticker div{display:inline-block;font-weight:800;letter-spacing:2px;animation:marquee 28s linear infinite}.ticker b{color:var(--yellow);padding:0 27px}@keyframes marquee{to{transform:translateX(-50%)}}
+    section.content{padding:85px 7%}.section-label{color:var(--orange);font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:800}
+    h2{font:clamp(34px,5vw,58px)/1.08 Righteous;margin:12px 0 18px;color:#672919}.intro{max-width:650px;line-height:1.8;color:#805c48;font-size:16px}
+    .menu{background:#ffe5aa}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}.card{background:#fffaf0;border:3px solid white;border-radius:20px;overflow:hidden;box-shadow:0 12px 30px #71351918;transition:.3s}.card:hover{transform:translateY(-9px) rotate(-.3deg)}
+    .card img{width:100%;height:230px;object-fit:cover;display:block}.card div{padding:20px 22px 25px}.card h3{font:27px Righteous;margin:0 0 8px;color:#672919}.card p{margin:0;color:#80604c;line-height:1.65}
+    .contact{background:#197344;color:white;text-align:center}.contact h2{color:white}.contact .intro{color:#f6e7cf;margin:auto}.phone{display:inline-block;margin-top:26px;padding:15px 26px;background:var(--yellow);color:#642515;border-radius:40px;font-size:22px;font-weight:800}
+    footer{padding:27px 7%;background:#521b0e;color:#ffe8c8;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}footer strong{font:22px Righteous;color:var(--yellow)}
+    @media(max-width:760px){header{padding:14px 5%}.brand-mark{width:44px;height:44px;font-size:18px}.brand-name{font-size:20px}.brand-name small{font-size:10px}nav{gap:10px}nav a:not(.call){display:none}.call{padding:10px 15px;font-size:13px}.hero{min-height:720px;height:94svh}.hero-inner{padding:190px 7% 120px}h1{font-size:clamp(49px,12vw,72px)}.hero-inner p{font-size:15px}.fresh-tag{top:auto;right:6%;bottom:100px;font-size:12px}.slide-caption{display:none}.cards{grid-template-columns:1fr}.card img{height:250px}.slide-dots{bottom:36px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="top-stripe"></div>
+  <header>
+    <a class="brand" href="#home"><span class="brand-mark">SPV</span><span class="brand-name">Curries<small>&amp; MEALS</small></span></a>
+    <nav><a href="#story">Our Story</a><a href="#menu">Our Menu</a><a href="#contact">Contact</a><a class="call" href="tel:+919502323598">Call to Order ↗</a></nav>
+  </header>
+  <main>
+    <section class="hero" id="home" aria-label="SPV Curries and Meals animated food slideshow">
+      <div class="slides">
+        <div class="slide"><img src="https://topiko.com/prod/app/productimages/1767094831_6953ba2f3ff93.jpeg" alt="Gutti Vankaya stuffed brinjal curry"><div class="shade"></div><span class="slide-caption">Gutti Vankaya · A Homemade Favourite</span></div>
+        <div class="slide"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto%2Cw_800/FOOD_CATALOG/IMAGES/CMS/2025/1/19/a452f32b-b577-4cee-8184-8564270a3573_05ac0976-fb6b-4026-9bf5-0083676c54fc.jpg" alt="Spicy chicken fry"><div class="shade"></div><span class="slide-caption">Spicy Chicken Fry · Full of Flavour</span></div>
+        <div class="slide"><img src="https://akm-img-a-in.tosshub.com/sites/rd/resources/embed/202002/img_20200120114140_1246830844_huge_020420011334.jpg" alt="Fish pulusu in spicy tamarind gravy"><div class="shade"></div><span class="slide-caption">Fish Pulusu · Rich &amp; Tangy</span></div>
+        <div class="slide"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/61d5e4184744283.65574396638dc.jpg" alt="Spicy chicken biryani"><div class="shade"></div><span class="slide-caption">Spicy Biryani · A Feast of Flavours</span></div>
+      </div>
+      <div class="hero-inner"><div class="eyebrow">Freshly Cooked · Made with Care</div><h1>Home taste.<br><em>In every bite.</em></h1><p>From delicious homemade curries to comforting everyday meals — enjoy familiar flavours, fresh cooking and the warmth of home.</p><div class="buttons"><a class="btn btn-main" href="#menu">Explore Our Menu ↗</a><a class="btn btn-light" href="https://wa.me/919502323598" target="_blank" rel="noopener">WhatsApp Us</a></div></div>
+      <div class="fresh-tag"><i></i>Freshly Cooked · Homestyle</div><div class="slide-dots"><span></span><span></span><span></span><span></span></div>
+    </section>
+    <div class="ticker"><div>HOME TASTE <b>✦</b> HOMESTYLE CURRIES <b>✦</b> FRESHLY PREPARED <b>✦</b> MADE WITH LOVE <b>✦</b> HOME TASTE <b>✦</b> HOMESTYLE CURRIES <b>✦</b> FRESHLY PREPARED <b>✦</b> MADE WITH LOVE <b>✦</b></div></div>
+    <section class="content" id="story"><div class="section-label">A little taste of home</div><h2>Good food brings<br>everyone together.</h2><p class="intro">At SPV Curries &amp; Meals, every meal is about familiar flavours, hearty portions and the joy of sharing. Made with care, familiar flavours and the warmth of home.</p></section>
+    <section class="content menu" id="menu"><div class="section-label">Fresh from our kitchen</div><h2>Flavours for every craving.</h2><p class="intro">From Gutti Vankaya and Bendakaya 65 Fry to Chicken Fry, Egg Pulusu, Gongura Dry Prawns, Fish Pulusu and spicy biryanis. Contact us for today's menu and availability.</p>
+      <div class="cards">
+        <article class="card"><img src="https://topiko.com/prod/app/productimages/1767094831_6953ba2f3ff93.jpeg" alt="Gutti Vankaya stuffed brinjal curry"><div><h3>Gutti Vankaya</h3><p>Traditional stuffed brinjal cooked in rich, flavourful masala.</p></div></article>
+        <article class="card"><img src="https://www.amruthahar.com/cdn/shop/files/OkraFryCurry.png?v=1714955833" alt="Bendakaya 65 fry"><div><h3>Bendakaya 65 Fry</h3><p>Crispy okra tossed with a spicy, flavourful coating.</p></div></article>
+        <article class="card"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto%2Cw_800/FOOD_CATALOG/IMAGES/CMS/2025/1/19/a452f32b-b577-4cee-8184-8564270a3573_05ac0976-fb6b-4026-9bf5-0083676c54fc.jpg" alt="Chicken fry"><div><h3>Chicken Fry</h3><p>Juicy chicken pieces coated in a rich, spicy masala.</p></div></article>
+        <article class="card"><img src="https://cdn.craftmymeals.com/recipes/guddu-pulusu-1.webp" alt="Egg pulusu"><div><h3>Egg Pulusu</h3><p>Boiled eggs simmered in a tangy, spicy pulusu gravy.</p></div></article>
+        <article class="card"><img src="https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/gongura_royyalu.jpg" alt="Gongura dry prawns"><div><h3>Gongura Dry Prawns</h3><p>Prawns and tangy gongura greens cooked with a delicious spicy kick.</p></div></article>
+        <article class="card"><img src="https://akm-img-a-in.tosshub.com/sites/rd/resources/embed/202002/img_20200120114140_1246830844_huge_020420011334.jpg" alt="Fish pulusu"><div><h3>Fish Pulusu</h3><p>Fish cooked in a rich, spicy and tangy tamarind gravy.</p></div></article>
+        <article class="card"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/61d5e4184744283.65574396638dc.jpg" alt="Spicy chicken biryani"><div><h3>Spicy Biryanis</h3><p>Aromatic biryani layered with rich masala and a delicious spicy kick.</p></div></article>
+      </div>
+    </section>
+    <section class="content contact" id="contact"><div class="section-label" style="color:#ffdf5b">Let's talk food</div><h2>Your next favourite meal is a call away.</h2><p class="intro">For orders, today's menu and availability, contact SPV Curries &amp; Meals.</p><a class="phone" href="tel:+919502323598">☎ +91 95023 23598</a></section>
+  </main>
+  <footer><strong>SPV Curries &amp; Meals</strong><span>Homestyle Food · Freshly Prepared</span><span>© <span id="year"></span> SPV Curries &amp; Meals</span></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
